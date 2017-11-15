@@ -15,10 +15,7 @@
     "autoload": {
         "psr-4": {
             "Driizl\\Elastic\\": "src/"
-        },
-        "files": [
-            "src/helpers.php"
-        ]
+        }
     },
     "minimum-stability": "dev",
     "extra": {
