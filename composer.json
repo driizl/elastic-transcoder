@@ -1,6 +1,12 @@
 {
     "name": "driizl/elastic-transcoder",
     "description": "AWS Elastic Transcoder Service Integration",
+    "keywords": [
+        "laravel",
+        "aws",
+        "elastic",
+        "package"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -18,16 +24,17 @@
         }
     },
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "extra": {
         "branch-alias": {
             "dev-master": "1.0-dev"
         },
         "laravel": {
             "providers": [
-                "Driizl\\Elastic\\ServiceProvider"
+                "Driizl\\Elastic\\ElasticServiceProvider"
             ],
             "aliases": {
-                "Elastic": "Driizl\\Elastic\\Facade"
+                "Elastic": "Driizl\\Elastic\\ElasticFacade"
             }
         }
     }
