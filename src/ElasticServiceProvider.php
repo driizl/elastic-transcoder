@@ -13,7 +13,9 @@ class ElasticServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->singleton('elastic', function() {
+            return new ElasticTranscoder;
+        });
     }
 
     /**

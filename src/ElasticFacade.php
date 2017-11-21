@@ -2,7 +2,9 @@
 
 namespace Driizl\Elastic;
 
-class ElasticFacade extends Illuminate\Support\Facades\Facade
+use Illuminate\Support\Facades\Facade;
+
+class ElasticFacade extends Facade
 {
     /**
      * Get the registered name of the component.
