@@ -34,7 +34,7 @@ class ElasticTranscoder
     {
         $folname = ''; //What is it??
         $params = [
-            'PipelineId' => '1471643381719-5dhb9a',
+            'PipelineId' => '',
             'Inputs' => [
 
             ],
@@ -44,7 +44,7 @@ class ElasticTranscoder
                     'Key' => $destinationKey,
                     'ThumbnailPattern' => $thumbPattern,
                     'Rotate' => 'auto',
-                    'PresetId' => '1471643840387-qq8udm',
+                    'PresetId' => '',
                     'Encryption' => [
                         'Mode' => 's3',
                     ],
