@@ -18,11 +18,61 @@ class ElasticTranscoder
         ]);
     }
 
-    public function createJob()
+    protected function getClient()
     {
-        $params = [];
+        return $this->client;
+    }
 
-        dump($this->client);
+    /**
+     *
+     * @param $inputKey
+     * @param $destinationKey
+     * @param $config
+     * @param null $thumbPattern
+     */
+    public function encode($inputKey, $destinationKey, $config, $thumbPattern = null)
+    {
+        $folname = ''; //What is it??
+        $params = [
+            'PipelineId' => '1471643381719-5dhb9a',
+            'Inputs' => [
+
+            ],
+            'OutputKeyPrefix' => $folname . "/",
+            'Outputs' => [
+                [
+                    'Key' => $destinationKey,
+                    'ThumbnailPattern' => $thumbPattern,
+                    'Rotate' => 'auto',
+                    'PresetId' => '1471643840387-qq8udm',
+                    'Encryption' => [
+                        'Mode' => 's3',
+                    ],
+                ],
+            ],
+        ];
+
+        $job_config = array(
+            'PipelineId' => '',
+            'Input' => '',
+            'Output' => '',
+        );
+
+        $result = $this->getClient()->createJob($params);
+    }
+
+    public function getJob($id)
+    {
+        return $this->getClient()->readJob([
+            'Id' => $id
+        ]);
+    }
+
+    public function cancelJob($id)
+    {
+        return $this->getClient()->cancelJob([
+            'Id' => $id
+        ]);
     }
 
 }
